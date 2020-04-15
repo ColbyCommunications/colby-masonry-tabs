@@ -7,6 +7,9 @@ import Masonry from './Masonry';
 export default class Requester extends React.Component {
     static propTypes = {
         endpoint: PropTypes.string.isRequired,
+        fields: PropTypes.object.isRequired,
+        colSize: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
     };
 
     constructor(props) {

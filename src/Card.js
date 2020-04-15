@@ -1,18 +1,19 @@
 import React from 'react';
 import _get from 'lodash/get';
+import PropTypes from 'prop-types';
 
-export default props => {
+const Card = props => {
     let cardImg;
     if (_get(props.element, props.fields.image)) {
         cardImg = (
             <img
                 className="card-img-top"
                 src={_get(props.element, props.fields.image)}
-                alt="Card image cap"
+                alt={_get(props.element, props.fields.title)}
             />
         );
     } else {
-        cardImg;
+        cardImg = '';
     }
 
     return (
@@ -39,7 +40,7 @@ export default props => {
                 <p className="card-text text-right">
                     <a href={_get(props.element, props.fields.link)}>
                         Read More{' '}
-                        <span class="colby-masonry-grid-card-readmore">
+                        <span className="colby-masonry-grid-card-readmore">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="15"
@@ -52,8 +53,8 @@ export default props => {
                                 strokeLinejoin="round"
                                 className="feather feather-chevrons-right"
                             >
-                                <polyline points="13 17 18 12 13 7"></polyline>
-                                <polyline points="6 17 11 12 6 7"></polyline>
+                                <polyline points="13 17 18 12 13 7" />
+                                <polyline points="6 17 11 12 6 7" />
                             </svg>
                         </span>
                     </a>
@@ -62,3 +63,10 @@ export default props => {
         </div>
     );
 };
+
+Card.propTypes = {
+    element: PropTypes.object.isRequired,
+    fields: PropTypes.object.isRequired,
+};
+
+export default Card;

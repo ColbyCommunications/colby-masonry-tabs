@@ -28,7 +28,6 @@
         "lodash": "^4.17.15",
         "prop-types": "^15.0.0",
         "react": "^16.0.0",
-        "react-dom": "^16.13.1",
         "react-masonry-component": "^6.2.1"
     },
     "husky": {

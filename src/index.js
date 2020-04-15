@@ -11,7 +11,6 @@ export default class MasonryTabs extends React.Component {
     };
 
     static defaultProps = {
-        type: 'cards',
         colSize: 'lg',
     };
 
