@@ -1,7 +1,7 @@
 import React from 'react';
 import Tabs from '@colbycommunications/colby-tabs';
 import PropTypes from 'prop-types';
-import MasonryRequester from './Requester';
+import Masonry from './Masonry';
 
 export default class MasonryTabs extends React.Component {
     static propTypes = {
@@ -22,7 +22,7 @@ export default class MasonryTabs extends React.Component {
                 name: tab.name,
                 title: tab.title,
                 content: (
-                    <MasonryRequester
+                    <Masonry
                         key={tab.name}
                         endpoint={tab.endpoint}
                         colSize={this.props.colSize}
