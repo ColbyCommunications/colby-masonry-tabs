@@ -1,0 +1,39 @@
+{
+    "name": "@colbycommunications/colby-masonry-tabs",
+    "version": "1.0.0",
+    "description": "fdafda",
+    "main": "dist/index.js",
+    "author": "Brandon K. Waltz",
+    "license": "MIT",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
+    "scripts": {
+        "build": "colby-package-build",
+        "build:watch": "colby-package-build --watch --verbose",
+        "lint": "colby-package-lint",
+        "format": "colby-package-format",
+        "test": "colby-package-test --watch",
+        "check": "colby-package-lint && colby-package-test",
+        "prepublishOnly": "colby-package-registry && npm run check && colby-package-build"
+    },
+    "devDependencies": {
+        "@colbycommunications/colby-package": "^2.2.3"
+    },
+    "dependencies": {
+        "@colbycommunications/colby-axios": "^1.0.0",
+        "@colbycommunications/colby-loader": "^2.0.2",
+        "@colbycommunications/colby-tabs": "^1.1.0",
+        "bootstrap": "^4.4.1",
+        "lodash": "^4.17.15",
+        "prop-types": "^15.0.0",
+        "react": "^16.0.0",
+        "react-dom": "^16.13.1",
+        "react-masonry-component": "^6.2.1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "colby-package-format -s && colby-package-lint -s && colby-package-test -s"
+        }
+    }
+}
