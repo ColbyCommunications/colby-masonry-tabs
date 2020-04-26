@@ -47,7 +47,7 @@ export default class Requester extends React.Component {
     renderChildren = () =>
         this.state.data.slice(0, this.state.limit).map(element => {
             let size = '4';
-            if (element.meta.masonry_size === 'large') {
+            if (element.meta.masonry_size[0] === 'Large') {
                 size = '8';
             }
             if (this.props.type === 'card') {
