@@ -47,9 +47,10 @@ export default class Requester extends React.Component {
     renderChildren = () =>
         this.state.data.slice(0, this.state.limit).map(element => {
             let size = '4';
-            if (element.meta.masonry_size[0] === 'Large') {
+            if (element.meta.masonry_size && element.meta.masonry_size[0] === 'Large') {
                 size = '8';
             }
+
             if (this.props.type === 'card') {
                 return (
                     <div
@@ -75,6 +76,7 @@ export default class Requester extends React.Component {
             <div>
                 <Loader loading={this.state.loading} type="inline" removeChildren>
                     <MasonryComponent className="row" options={masonryOptions}>
+                        <div className={`grid-sizer col-${this.props.colSize}-4`} />
                         {this.renderChildren()}
                     </MasonryComponent>
                 </Loader>
